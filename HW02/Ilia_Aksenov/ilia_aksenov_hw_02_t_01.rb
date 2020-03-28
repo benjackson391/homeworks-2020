@@ -1,5 +1,5 @@
 def parse(filepath)
-  data = File.open(filepath).readlines.map(&:chomp)
+  data = File.readlines(filepath, chomp: true)
   data.grep(/error/i)
 end
 
