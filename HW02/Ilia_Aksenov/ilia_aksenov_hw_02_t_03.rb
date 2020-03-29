@@ -1,6 +1,5 @@
 require 'time'
-REGEX = %r{^(.{21})\s[\w-]+\[\d+\]\s\w+\s-\s(.+)$}.freeze
-
+REGEX = %r{/^(.{21})\s[\w-]+\[\d+\]\s\w+\s-\s(.+)$/}.freeze
 
 def format(time)
   "#{time.to_i}.#{time.usec}".to_f
@@ -12,7 +11,7 @@ end
 
 def parse(file, ranges = [], last = 0)
   file.each do |line|
-    ( datetime, message ) = line.match(REGEX)[1,2]
+    (datetime, message) = line.match(REGEX)[1, 2]
     seconds = format(Time.parse(datetime))
     next unless message =~ /Calling core with action/
 
