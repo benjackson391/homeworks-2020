@@ -1,7 +1,7 @@
 require 'time'
 
 class Person
-  attr_accessor :nane, :surname
+  attr_accessor :name, :surname
 
   def initialize(name:, surname:)
     @name = name
