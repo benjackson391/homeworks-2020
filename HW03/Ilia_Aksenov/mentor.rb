@@ -20,7 +20,7 @@ class Mentor
       time = @subscribe_dates[student.object_id]
       homeworks.concat student.homeworks.select { |k| k > time }.values
     end
-    p homeworks
+    homeworks
   end
 
   def read_notifications!
